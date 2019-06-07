@@ -10,6 +10,8 @@ ENV LITECOIN_VERSION=0.17.1
 ENV LITECOIN_DATA=/home/litecoin/.litecoin
 
 COPY docker-entrypoint.sh /entrypoint.sh
+COPY rabbitmqadmin /usr/bin/rabbitmqadmin
+COPY google-logger /usr/bin/google-logger
 
 RUN groupadd -r litecoin && useradd -r -m -g litecoin litecoin \
   && set -ex \
